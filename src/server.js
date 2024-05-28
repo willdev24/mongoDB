@@ -10,11 +10,23 @@ app.set('views' , path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, "public")))
 
 
-app.get("/api",(req, res)=>{
+app.get("/", (req,res)=>{
 
+    res.render("index")
+
+})
+
+
+app.get("/api",(req, res)=>{
     
     res.sendFile(__dirname +  '/cadastrados.json')
   
+})
+
+app.use((req,res)=>{
+
+    res.send("erro, pagna nao encontrada")
+
 })
 
 
