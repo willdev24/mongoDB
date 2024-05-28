@@ -1,8 +1,12 @@
 const express = require('express')
 const fs = require('fs')
 const path = require("path")
+const db = require('./database/index')
 
 const app = express()
+
+//chamando a funcao do banco de dados 
+db.conect()
 
 app.set('view engine', 'ejs')
 app.set('views' , path.join(__dirname, 'views'))
