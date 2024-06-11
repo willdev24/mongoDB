@@ -1,8 +1,10 @@
 const express = require('express')
 const fs = require('fs')
 const path = require("path")
+
 const db = require('./database')
 const {router} = require('./routes')
+const  mongoose  = require('mongoose')
 
 const app = express()
 
@@ -17,17 +19,38 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 
-app.use('/', router)
+const schema = new mongoose.Schema({
+
+name: String,
+age: Number,
+email:String,
+password:String,
+
+
+})
+
+const Model = mongoose.model('clientes', schema)
+
+
+const register = new Model({
+    name: 'willy thiago',
+    age: 24,
+    email:'willythiagothiago@gmail.com',
+    password:'041529'
+    
+})
+
+register.save()
+
+
+
+//rotas
+
 app.use("", router)
 
 
 
-
-
-
-
-
-
+//rodando servidor
 const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{
