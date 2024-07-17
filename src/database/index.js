@@ -14,5 +14,6 @@ monGoDB.on("erro",console.error.bind(console,"conection erro :"))
 }//banco conctado
 
 module.exports ={
-    conect
+    conect,
+    mongoose
 } 

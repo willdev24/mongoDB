@@ -3,7 +3,9 @@ const fs = require('fs')
 const path = require("path")
 
 const db = require('./database')
-const router = require('./routes')
+const {router} = require('./routes')
+const {  claint02, register}= require("./models/customers")//models para salvar no banco 
+const { default: mongoose, model } = require('mongoose')
 
 
 const app = express()
@@ -16,33 +18,9 @@ app.set('views' , path.join(__dirname, 'views'))
 
 app.use(express.static(path.join(__dirname, "public")))
 
-
-/*
-
-const schema = new mongoose.Schema({
-
-name: String,
-age: Number,
-email:String,
-password:String,
-
-
-})
-
-const Model = mongoose.model('clientes', schema)
-
-
-const register = new Model({
-    name: 'willy thiago',
-    age: 24,
-    email:'willythiagothiago@gmail.com',
-    password:'041529'
-    
-})
-
-register.save()
-*/
-
+// chamando os models e salvando no banco de dados 
+claint02.save()
+register.save()    
 
 //rotas
 
