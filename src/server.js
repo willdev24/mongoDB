@@ -3,8 +3,8 @@ const fs = require('fs')
 const path = require("path")
 
 const db = require('./database')
-const {router} = require('./routes')
-const  mongoose  = require('mongoose')
+const router = require('./routes')
+
 
 const app = express()
 
@@ -17,7 +17,7 @@ app.set('views' , path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, "public")))
 
 
-
+/*
 
 const schema = new mongoose.Schema({
 
@@ -41,7 +41,7 @@ const register = new Model({
 })
 
 register.save()
-
+*/
 
 
 //rotas

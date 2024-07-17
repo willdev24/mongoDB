@@ -6,13 +6,15 @@ router.get("/", (req,res)=>{
 
 })
 
-
+/*
 router.get("/api",(req, res)=>{
     
-    res.sendFile(__dirname +  '/cadastrados.json')
+res.sendFile(__dirname +  '/cadastrados.json',{
+    api:__dirname +  '/cadastrados.json'
+})
   
 })
-
+*/
 router.use((req,res)=>{
 
     res.send("erro, pagna nao encontrada")
@@ -20,5 +22,5 @@ router.use((req,res)=>{
 })
 
 module.exports  = {
-    router}
+    router }
 
