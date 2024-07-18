@@ -4,7 +4,29 @@
 <%- include( "partials/head.ejs")%>
 
 <body>
+
+    <header style="display: flex; justify-content: center; height: 10vw; background-color: black; color: bisque; font-style: 30px;">
+       <p  style="font-size: 30px;">tela para cadastro de usuarios</p>
+
+    </header>
     
-    <h1>ola mundo</h1>
+    <form style="display: flex; justify-content: center; flex-direction: column; align-items: center; " action="/cadastro_clientes" method="post">
+
+
+       <label for="nome">Nome</label>
+       <input type="text" name="nome" placeholder="digite seu nome" >
+
+       <label for="email">email</label>
+       <input type="email" name="email" placeholder="digite seu email" >
+
+       <label for="senha">senha</label>
+       <input type="text" name="senha" placeholder="cria uma senha" >
+
+       <label for="fone">fone</label>
+       <input type="tel" name="fone" placeholder="digite seu contato" >
+
+       <button type="submit" id="env" style="padding: 8px 30px ; background-color: blueviolet; color: aliceblue; margin-top: 10px; " >cadastrar</button>
+
+    </form>
 </body>
 </html>
