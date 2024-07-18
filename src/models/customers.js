@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const fs = require("fs")
+
     
 const controu = (obj)=>{
 
@@ -14,17 +14,17 @@ const controu = (obj)=>{
             
         const Model = mongoose.model('clientes', schema)
     
-
    const register = new Model({
         name: obj.nome,
-        contato: obj.contato,
+        contato: obj.fone,
         email:obj.email,
-        password:obj.password
+        password:obj.senha
         
     })
     
-register.save()    
-    
+
+register.save()
+
 }
     module.exports={
 
