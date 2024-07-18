@@ -1,11 +1,10 @@
 const mongoose = require("mongoose")
-
+const fs = require("fs")
 
 const schema = new mongoose.Schema({
 
     name: String,
-    age: Number,
-    cpf:Number,
+    contato: Number,
     email:String,
     password:String,
     
@@ -13,28 +12,19 @@ const schema = new mongoose.Schema({
         
     const Model = mongoose.model('clientes', schema)
     
-const controu = ()=>{
+const controu = (obj)=>{
 
-    const register = new Model({
-        name: 'teste004',
-        age: 19,
-        cpf: 70635476231,
-        email:'go71782@gmail.com',
-        password:'90150709'
+
+   const register = new Model({
+        name: obj.nome,
+        contato: obj.contato,
+        email:obj.email,
+        password:obj.password
         
     })
     
-    const claint02 = new Model({
-        
-        name: 'teste203',
-        age: 1,
-        cpf: 70635476231,
-        email:'go71782@gmail.com',
-        password:'303015'
     
-    })
 
-    claint02.save()
 register.save()    
 
     

@@ -3,7 +3,7 @@ const path = require("path")
 
 const db = require('./database')
 const {router} = require('./routes')
-const  {controu}= require("./models/customers")//models para salvar no banco 
+
 const { default: mongoose, model } = require('mongoose')
 
 
@@ -12,8 +12,7 @@ const app = express()
 //chamando a funcao do banco de dados 
 db.conect()
 
-//chamando os models
-controu()
+
 
 app.set('view engine', 'ejs')
 app.set('views' , path.join(__dirname, 'views'))
