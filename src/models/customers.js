@@ -1,19 +1,19 @@
 const mongoose = require("mongoose")
 const fs = require("fs")
-
-const schema = new mongoose.Schema({
-
-    name: String,
-    contato: Number,
-    email:String,
-    password:String,
-    
-    })
-        
-    const Model = mongoose.model('clientes', schema)
     
 const controu = (obj)=>{
 
+    const schema = new mongoose.Schema({
+
+        name: String,
+        contato: Number,
+        email:String,
+        password:String,
+        
+        })
+            
+        const Model = mongoose.model('clientes', schema)
+    
 
    const register = new Model({
         name: obj.nome,
@@ -23,10 +23,7 @@ const controu = (obj)=>{
         
     })
     
-    
-
 register.save()    
-
     
 }
     module.exports={
