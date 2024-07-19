@@ -27,7 +27,6 @@ register.save()
 
 }
     module.exports={
-
         controu
     }
     
