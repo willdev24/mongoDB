@@ -2,15 +2,40 @@ const router = require("express").Router()
 const fs = require("fs")
 const { controu } = require("../models/customers")
 
-
+const CostomersControll = require("../controllers/customers")
+const { title } = require("process")
 
 
 router.get("/", (req,res)=>{
 
-    res.render("index")
+    res.render("index",{
+        title:"cadastro"
+    })
 
 })
 
+
+router.post("/cadastro_clientes", CostomersControll.add)
+
+
+
+router.get("/api",(req, res)=>{
+    
+res.sendFile(__dirname +  '/cadastrados.json',{
+    api:__dirname +  '/cadastrados.json'
+})
+  
+})
+
+router.use((req,res)=>{
+    
+    res.send("erro, pagna nao encontrada")
+
+})
+
+
+
+/*
 router.post("/cadastro_clientes",(req,res)=>{
 const {senha,email,nome,fone}= req.body
 
@@ -25,31 +50,16 @@ dadosCLINT.push({
 })
 
 const mandarprobanco ={nome,email,senha,fone}
-
 controu(mandarprobanco)
 
 const retorno   = JSON.stringify(dadosCLINT)
 fs.writeFileSync("./src/cadastrados.json", retorno)
 
-
 console.log(req.body)
 res.redirect("/")
 
 })
-
-router.get("/api",(req, res)=>{
-    
-res.sendFile(__dirname +  '/cadastrados.json',{
-    api:__dirname +  '/cadastrados.json'
-})
-  
-})
-
-router.use((req,res)=>{
-
-    res.send("erro, pagna nao encontrada")
-
-})
+*/
 
 module.exports={
     router

@@ -19,7 +19,7 @@ app.set('views' , path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({extended:true}))
 
-// chamando os models e salvando no banco de dados 
+
 // rotas
 
 app.use("/", router)
