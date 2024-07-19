@@ -1,8 +1,12 @@
-const models = require("../models/customers")
+const {Model}= require("../models/customers")
 
 
 function add(req,res){
- const {senha,email,nome,fone}= req.body
+ const {
+    name,
+    email,
+    password,
+    contato}= req.body
 
 //--primeira opçao
 //const mandarprobanco ={nome,email,senha,fone}
@@ -10,12 +14,12 @@ function add(req,res){
 
 
 //fazer a segunda opçao
-const register = new models({
+const register = new Model({
 
-    nome,
+    name,
     email,
-    senha,
-    fone
+    password,
+    contato
 })
 
 register.save()
