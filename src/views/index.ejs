@@ -10,20 +10,27 @@
 
     </header>
     
+   
+
+
     <form style="display: flex; justify-content: center; flex-direction: column; align-items: center; " action="/cadastro_clientes" method="post">
 
 
-       <label for="nome">Nome</label>
+       <label for="name">Nome</label>
        <input type="text" name="name" placeholder="digite seu nome" >
 
        <label for="email">email</label>
        <input type="email" name="email" placeholder="digite seu email" >
 
-       <label for="senha">senha</label>
-       <input type="text" name="password" placeholder="cria uma senha" >
+       <label for="senha">senhas</label>
+       <input type="text" name="senha" placeholder="cria uma senha" >
 
-       <label for="fone">fone</label>
+       <label for="contato">fone</label>
        <input type="tel" name="contato" placeholder="digite seu contato" >
+
+       
+       <label for="def">deficiencia</label>
+       <input type="text" name="def" placeholder="possui deficienia? sim ou nao" >
 
        <button type="submit" id="env" style="padding: 8px 30px ; background-color: blueviolet; color: aliceblue; margin-top: 10px; " >cadastrar</button>
 

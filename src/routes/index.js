@@ -7,9 +7,11 @@ const { title } = require("process")
 
 
 router.get("/", (req,res)=>{
+    const{c1}=req.params
 
     res.render("index",{
-        title:"cadastro"
+        title:"cadastro",
+        cadastrado:c1
     })
 
 })

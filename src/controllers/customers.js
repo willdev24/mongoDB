@@ -1,31 +1,50 @@
-const {Model}= require("../models/customers")
+const { criptografar } = require("../../ultils/password")
+const {Model, Model02}= require("../models/customers")
 
 
-function add(req,res){
+async function add(req,res){
  const {
     name,
     email,
-    password,
-    contato}= req.body
+    senha,
+    contato,
+    def, 
+        }= req.body
 
-//--primeira opçao
-//const mandarprobanco ={nome,email,senha,fone}
-//models.controu(mandarprobanco)
+const password = await criptografar(senha)
 
 
-//fazer a segunda opçao
+if(def){
+    
+    const clintsEspeciais = new Model02({
+    
+        name,
+        email,
+        password,
+        contato,
+        def,
+    
+    })
+
+    clintsEspeciais.save()
+    
+}else{
+
 const register = new Model({
 
     name,
     email,
-    password,
-    contato
+    password:password,
+    contato,
+     
 })
 
 register.save()
- 
+}
+
+
 console.log("ok funcionou")
-res.redirect("/")
+res.redirect("/?c1=1")
 }
 
 module.exports = {
