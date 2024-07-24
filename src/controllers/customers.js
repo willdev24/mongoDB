@@ -1,6 +1,16 @@
 const { criptografar } = require("../../ultils/password")
 const {Model, Model02}= require("../models/customers")
 
+function index(req, res){
+
+    res.render("cadastro",{
+        title:"cadastro",
+        
+    })
+
+}
+
+
 
 async function add(req,res){
  const {
@@ -48,5 +58,6 @@ res.redirect("/?c1=1")
 }
 
 module.exports = {
-    add
+    index,
+    add,
 }

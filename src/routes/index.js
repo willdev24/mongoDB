@@ -4,19 +4,12 @@ const { controu } = require("../models/customers")
 
 const CostomersControll = require("../controllers/customers")
 const { title } = require("process")
+const indexControll = require("../controllers/index")
+
+router.get("/",indexControll.index)
 
 
-router.get("/", (req,res)=>{
-    const{c1}=req.params
-
-    res.render("index",{
-        title:"cadastro",
-        cadastrado:c1
-    })
-
-})
-
-
+router.get("registro/", CostomersControll.index)
 router.post("/cadastro_clientes", CostomersControll.add)
 
 
