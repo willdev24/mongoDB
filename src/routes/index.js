@@ -9,7 +9,7 @@ const indexControll = require("../controllers/index")
 router.get("/",indexControll.index)
 
 
-router.get("registro/", CostomersControll.index)
+router.get("/registro", CostomersControll.index)
 router.post("/cadastro_clientes", CostomersControll.add)
 
 

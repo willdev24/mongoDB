@@ -23,6 +23,7 @@ app.use(express.urlencoded({extended:true}))
 // rotas
 
 app.use("/", router)
+//app.use("registro", router)
 
 
 //rodando servidor

@@ -3,7 +3,7 @@ const {Model, Model02}= require("../models/customers")
 
 function index(req, res){
 
-    res.render("cadastro",{
+    res.render("cadastro.ejs",{
         title:"cadastro",
         
     })
